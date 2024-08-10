@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Include your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: grey;
+            margin: 0;
+            padding: 0;
+        }
+        .contact-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .contact-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+        .contact-section h2 {
+            margin-top: 0;
+            font-size: 28px;
+        }
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .contact-grid .contact-box {
+            flex: 1;
+            min-width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .contact-grid .contact-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .contact-box h3 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+        .contact-box p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .contact-form .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            gap: 8px;
+        }
+        .contact-form select, .contact-form input[type="tel"], .contact-form input[type="text"], .contact-form textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            flex: 1;
+        }
+        .contact-form select {
+            width: 120px;
+        }
+        .contact-form input[type="tel"] {
+            flex: 2;
+        }
+        .contact-form button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+        .contact-form .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        @media (max-width: 768px) {
+            .contact-grid {
+                flex-direction: column;
+            }
+            .contact-form, .contact-box {
+                width: 100%;
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+
+        /* Footer Styles */
+.footer {
+    background-color: #131313; /* Dark background to match the theme */
+    color: #ffffff; /* White text */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__logo img {
+    width: 120px; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.footer__links {
+    margin-bottom: 20px;
+}
+
+.footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.footer__link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+    color: #0c6cea; /* Change to a theme color on hover */
+}
+
+.footer__contact {
+    margin-bottom: 20px;
+}
+
+.footer__contact-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.footer__contact-info {
+    font-size: 1rem;
+}
+
+.footer__contact-link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer__contact-link:hover {
+    color: #0c6cea; /* Change to a theme color on hover */
+}
+
+.footer__socials {
+    margin-bottom: 20px;
+}
+
+.footer__social-link {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer__social-link:hover {
+    color: #ff5722; /* Change to a theme color on hover */
+    transform: scale(1.2); /* Enlarge icons on hover */
+}
+
+.footer__bottom {
+    font-size: 0.9rem;
+    color: #d0d0d0;
+}
+
+@media (max-width: 768px) {
+    .footer__list {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar
+{
+    background: #13131313;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+   
+}
+.navbar__container
+{
+    display:flex;
+    justify-content:space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%; /*here is the majic that spaced between logo and list of navbars*/
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+
+/* Ensure the logo image fits well within the navbar */
+#navbar__logo-img {
+    height: 60px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Keep the existing styles or adjust as needed */
+#navbar__logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem ;
+}
+ 
+
+.fa-gem
+{
+    margin-right: 0.5rem; /*we will add something cool right  here*/
+}
+
+.navbar__menu
+{
+    display: flex; /*here is the magic that made the lists in horizontal layout:)*/
+    align-items: center;
+    list-style: none;
+    text-align: center;
+
+}
+
+
+/* Navbar Link Styles */
+.navbar__links {
+    position: relative;
+    display: inline-block;
+    padding: 0 1rem;
+    text-decoration: none;
+    color: #edecec;
+    font-size: 1rem;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Underline Effect */
+.navbar__links::before {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Position the underline below the text */
+    left: 0;
+    width: 0; /* Initial width of the underline */
+    height: 2px; /* Initial height of the underline */
+    background: cornflowerblue; /* Color of the underline */
+    transition: width 0.3s ease, height 0.3s ease, background 0.3s ease; /* Animate width, height, and background */
+}
+
+/* Hover Effect */
+.navbar__links:hover::before {
+    width: 100%; /* Full width on hover */
+    height: 4px; /* Increase the thickness of the underline on hover */
+    background: #0c6cea; /* Change underline color on hover if needed */
+}
+
+/* Adjusting the navbar items to align correctly */
+.navbar__item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+
+
+
+.navbar__btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+     
+}
+.button
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: grey;
+    color: black;
+
+}
+.button:hover
+{
+    background: purple;
+    transition: all 0.3s ease ;
+}
+ 
+
+/*mobile media stuffs right here*/
+
+@media screen and (max-width: 960px) 
+{
+    .navbar__container
+    {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0; /*loogoo isa giddugalarra ture sana xiggiitti achi butuuf tammirii kaa'amedha*/
+
+    }
+
+    .navbar__menu
+    {
+        display: grid; /*taammiriin kan bir yeroo kun as taa'uu list menu kan daraddrame damn!*/
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%; /*ishiin kun dinqii ishii ittuma fuftee jirti!*/
+        position: absolute;
+        top: -1000px; /*asixxi billic jedhee kan inni bade */
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+        background: black;
+ 
+    }
+    .navbar__menu.active
+    {
+         background: black;
+         top: 100%;
+         opacity: 1;
+         transition: all 0.5s ease;
+         z-index: 99;
+         height: 60vh;
+         font-size: 1.6rem;
+  
+
+    }
+    #navbar__logo
+    {
+        padding-left: 25px;
+
+    }
+
+    .navbar__toggle .bar
+    {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #fff;
+
+    }
+    .navbar__item
+    {
+        width: 100%;
+    }
+    .navbar__links
+    {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+
+
+
+    }
+    #mobile-menu
+    {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+
+    }
+    .navbar__btn
+    {
+        padding-bottom: 2rem;
+    }
+    .button
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%; /*ishiin kun immoo taammire giddu gala goote is gadi rarraé sanaf*/
+        height: 8px;
+        margin: 0;
+    }
+
+    .navbar__toggle .bar
+    {
+        display: block; /*ishiin kun immoo humburger akka mullattu gooti!*/
+        cursor: pointer;
+    }
+
+/* Adjusted styles for the hamburger icon when active */
+#mobile-menu.is-active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); /* Rotate and move to form an X */
+}
+
+#mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0; /* Hide the middle bar */
+}
+
+#mobile-menu.is-active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px); /* Rotate and move to form an X */
+}
+
+
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">
+                <img src="Logo weltekji.png" alt="WEL Logo" id="navbar__logo-img">
+            </a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/index.html" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/index.html#portfolio" class="navbar__links">Service</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/blog.html" class="navbar__links">Blog</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="about.html" class="navbar__links">About</a>
+            </li>
+                <li class="navbar__item">
+                    <a href="/contact.html" class="navbar__links">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="contact-container">
+        <div class="contact-section">
+            <h2>Contact Me</h2>
+            <div class="contact-grid">
+                <!-- Send a Message Section -->
+                <div class="contact-box">
+                    <h3>Send a Message</h3>
+                    <form id="contactForm" class="contact-form">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="phone">Phone Number:</label>
+                        <div class="input-group">
+                            <select id="country-code" name="country-code">
+                                <!-- Options will be dynamically added here -->
+                            </select>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required pattern="[0-9]{1,15}" title="Phone number should be between 1 and 15 digits">
+                        </div>
+
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" required>
+
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+
+                        <button type="submit">Send</button>
+                        <div id="formMessage" class="error"></div>
+                    </form>
+                </div>
+
+                <!-- Get in Touch Section -->
+                <div class="contact-box">
+                    <h3>Get in Touch</h3>
+                    <p><strong>Phone:</strong> +123 456 7890</p>
+                    <p><strong>Email:</strong> <a href="mailto:info@weltekji.com">info@weltekji.com</a></p>
+                    <p><strong>Address:</strong> 1234 Street Name, City, Country</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- Footer Section -->
+     <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__logo">
+                <a href="/">
+                    <img src="Logo weltekji.png" alt="WEL Logo" id="footer__logo-img">
+                </a>
+            </div>
+            <div class="footer__links">
+                <ul class="footer__list">
+                    <li><a href="index.html" class="footer__link">Home</a></li>
+                    <li><a href="#portfolio" class="footer__link">Service</a></li>
+                    <li><a href="blog.html" class="footer__link">Blog</a></li>
+                    <li><a href="/contact.html" class="footer__link">Contact</a></li>
+                    <li><a href="about.html" class="footer__link">About Me</a></li>
+                </ul>
+            </div>
+            <div class="footer__contact">
+                <p class="footer__contact-title">Contact Information</p>
+                <p class="footer__contact-info">
+                    Email: <a href="mailto:info@weltekji.com" class="footer__contact-link">info@weltekji.com</a><br>
+                    Phone: <a href="tel:+1234567890" class="footer__contact-link">+123 456 7890</a>
+                </p>
+            </div>
+            <div class="footer__socials">
+                <a href="https://x.com/AbenezerRW" class="footer__social-link" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/abenezer-regasa-777522306/" class="footer__social-link" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.facebook.com/yourprofile" class="footer__social-link" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2024 Weltekji. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to smooth scroll to a section
+    function smoothScrollTo(elementId) {
+        const targetElement = document.getElementById(elementId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    // Check if there's a hash in the URL
+    const hash = window.location.hash;
+    if (hash) {
+        const targetId = hash.substring(1); // Remove the '#' from the hash
+        smoothScrollTo(targetId);
+    }
+});
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const countryCodeSelect = document.getElementById('country-code');
+            const phoneInput = document.getElementById('phone');
+            const countryCodes = [
+                { code: '+213', country: 'Algeria' },
+                { code: '+229', country: 'Benin' },
+                { code: '+254', country: 'Kenya' },
+
+
+            ];
+
+            // Sort the country codes alphabetically by country name
+            countryCodes.sort((a, b) => a.country.localeCompare(b.country));
+
+            // Populate the dropdown with country codes
+            countryCodes.forEach(function(country) {
+                const option = document.createElement('option');
+                option.value = country.code;
+                option.textContent = `${country.code} (${country.country})`;
+                countryCodeSelect.appendChild(option);
+            });
+
+            // Update the phone input placeholder based on selected country code
+            countryCodeSelect.addEventListener('change', function() {
+                const selectedCode = countryCodeSelect.value;
+                phoneInput.placeholder = `Enter phone number (e.g., ${selectedCode}123456789)`;
+            });
+
+            // Initialize placeholder with default selected code
+            phoneInput.placeholder = `Enter phone number (e.g., ${countryCodeSelect.value}123456789)`;
+        });
+
+
+
+        const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('.navbar__menu');
+const navLinks = document.querySelectorAll('.navbar__links'); // Select all the links in the navbar
+
+menu.addEventListener('click', function() {
+   menu.classList.toggle('is-active');
+   menuLinks.classList.toggle('active');
+});
+
+// Close the mobile menu when any link is clicked
+navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        menu.classList.remove('is-active');
+        menuLinks.classList.remove('active');
+    });
+});
+
+    </script>
+
+</body>
+</html>

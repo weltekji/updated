@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Weltekji</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Additional CSS for animation and alignment */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .about-me {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 1200px;
+            border-radius: 8px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .about-me__image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #333;
+            margin-bottom: 20px;
+            animation: zoomIn 1.5s ease-in-out;
+        }
+
+        .about-me__title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about-me__description {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .about-me__socials {
+            margin: 20px 0;
+        }
+
+        .about-me__social-link {
+            color: #333;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        .about-me__social-link:hover {
+            color: #007BFF;
+        }
+
+        .about-me__skills {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-me__skills h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .about-me__skills ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .about-me__skills li {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .about-me__skills span {
+            font-weight: bold;
+        }
+
+        .about-me__button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .about-me__button:hover {
+            background-color: #0056b3;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .about-me {
+                padding: 20px;
+            }
+
+            .about-me__title {
+                font-size: 1.5em;
+            }
+
+            .about-me__description {
+                font-size: 1em;
+            }
+
+            .about-me__skills li {
+                font-size: 1em;
+            }
+
+            .about-me__button {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">
+                <img src="Logo weltekji.png" alt="WEL Logo" id="navbar__logo-img">
+            </a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="navbar__menu">
+                <li class="navbar__item"><a href="index.html" class="navbar__links">Home</a></li>
+                <li class="navbar__item"><a href="/index.html#portfolio" class="navbar__links">Service</a></li>
+                <li class="navbar__item"><a href="blog.html" class="navbar__links">Blog</a></li>
+                <li class="navbar__item"><a href="about.html" class="navbar__links">About</a></li>
+                <li class="navbar__item"><a href="/contact.html#contact" class="navbar__links">Contact</a></li>
+             </ul>
+        </div>
+    </nav>
+
+    <!-- About Me Section -->
+    <section class="about-me">
+        <img src="isakana.jpeg" alt="Abenezer Regasa" class="about-me__image">
+        <h2 class="about-me__title">About Me</h2>
+        <p class="about-me__description">
+            Hi, I'm Abenezer Regasa, a passionate freelance web and software developer with a knack for creating dynamic and user-friendly websites. I'm currently pursuing a Bachelor's degree in Computer Science - Data Analysis at the University of Messina, Sicily. I'm also the founder of Weltekji, where we specialize in delivering innovative digital solutions.
+        </p>
+
+        <div class="about-me__skills">
+            <h3>Skills</h3>
+            <ul>
+                <li><span>Front-End:</span> HTML, CSS, JavaScript, Bootstrap, React.js</li>
+                <li><span>Back-End:</span> Node.js, Django (Python)</li>
+                <li><span>Data Analysis:</span> Pandas, Numpy, Palantir Foundry</li>
+                <li><span>Programming:</span> C, Python (OOP, Algorithms, Data Structures)</li>
+                <li><span>Design:</span> Logo Design, Mockup Creation, Branding</li>
+                <li><span>Tools:</span> Adobe Illustrator, Adobe Photoshop, Adobe XD</li>
+            </ul>
+            <a href="https://verify.skilljar.com/c/6z9wbpshbuab" class="about-me__button" target="_blank">Palantir Foundry Certification</a>
+        </div>
+
+        <div class="about-me__socials">
+            <a href="https://x.com/AbenezerRW" class="about-me__social-link" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/abenezer-regasa-777522306/" class="about-me__social-link" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.facebook.com/yourprofile" class="about-me__social-link" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+
+        <a href="about.html" class="about-me__button">Thank you!</a>
+    </section>
+
+    <!-- Footer Section -->
+<footer class="footer">
+    <div class="footer__container">
+        <div class="footer__logo">
+            <a href="/">
+                <img src="Logo weltekji.png" alt="WEL Logo" id="footer__logo-img">
+            </a>
+        </div>
+        <div class="footer__links">
+            <ul class="footer__list">
+                <li><a href="index.html" class="footer__link">Home</a></li>
+                <li><a href="#portfolio" class="footer__link">Service</a></li>
+                <li><a href="blog.html" class="footer__link">Blog</a></li>
+                <li><a href="#contact" class="footer__link">Contact</a></li>
+                <li><a href="about.html" class="footer__link">About Me</a></li>
+            </ul>
+        </div>
+        <div class="footer__contact">
+            <p class="footer__contact-title">Contact Information</p>
+            <p class="footer__contact-info">
+                Email: <a href="mailto:info@weltekji.com" class="footer__contact-link">info@weltekji.com</a><br>
+                Phone: <a href="tel:+1234567890" class="footer__contact-link">+123 456 7890</a>
+            </p>
+        </div>
+        <div class="footer__socials">
+            <a href="https://x.com/AbenezerRW" class="footer__social-link" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/abenezer-regasa-777522306/" class="footer__social-link" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.facebook.com/yourprofile" class="footer__social-link" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <p>&copy; 2024 Weltekji. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
