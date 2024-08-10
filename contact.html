@@ -4,473 +4,348 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Include your CSS file -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: grey;
+            background-color: #010101;
             margin: 0;
             padding: 0;
+            color: #edecec;
         }
 
-        .navbar, .footer {
-    width: 100%;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
         * {
-    box-sizing: border-box;
-}
-        .contact-container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
+            box-sizing: border-box;
         }
-        .contact-section {
+
+        .navbar {
+            background: #131313;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .navbar__container {
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
+            z-index: 1;
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        #navbar__logo-img {
+            height: 60px;
+            width: auto;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        #navbar__logo {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 2rem;
+        }
+
+        .navbar__menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            text-align: center;
+        }
+
+        .navbar__links {
+            position: relative;
+            display: inline-block;
+            padding: 0 1rem;
+            text-decoration: none;
+            color: #edecec;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar__links:hover {
+            color: #0c6cea;
+        }
+
+        .navbar__links::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: cornflowerblue;
+            transition: width 0.3s ease;
+        }
+
+        .navbar__links:hover::before {
+            width: 100%;
+        }
+
+        .navbar__item {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .navbar__toggle .bar {
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+            background: #fff;
+        }
+
+        @media screen and (max-width: 960px) {
+            .navbar__container {
+                padding: 0;
+            }
+
+            .navbar__menu {
+                display: grid;
+                grid-template-columns: auto;
+                margin: 0;
+                width: 100%;
+                position: absolute;
+                top: -1000px;
+                opacity: 0;
+                transition: all 0.5s ease;
+                height: 50vh;
+                z-index: -1;
+                background: black;
+            }
+
+            .navbar__menu.active {
+                background: black;
+                top: 100%;
+                opacity: 1;
+                transition: all 0.5s ease;
+                z-index: 99;
+                height: 60vh;
+                font-size: 1.6rem;
+            }
+
+            .navbar__toggle .bar {
+                display: block;
+                cursor: pointer;
+            }
+
+            #mobile-menu.is-active .bar:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            #mobile-menu.is-active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            #mobile-menu.is-active .bar:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .navbar__item {
+                width: 100%;
+            }
+
+            .navbar__links {
+                text-align: center;
+                padding: 2rem;
+                width: 100%;
+                display: table;
+            }
+        }
+
+        .contact-container {
+            padding: 40px 15px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            animation: fadeIn 1s ease-out;
+            align-items: center;
         }
-        .contact-section h2 {
-            margin-top: 0;
-            font-size: 28px;
-        }
-        .contact-grid {
+
+        .contact-content {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
         }
-        .contact-grid .contact-box {
-            flex: 1;
-            min-width: 300px;
-            background-color: #fff;
+
+        .contact-info, .contact-form-container {
+            background-color: #1e1e1e;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 800px;
         }
-        .contact-grid .contact-box:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+        .contact-info {
+            text-align: center;
         }
-        .contact-box h3 {
-            margin-top: 0;
-            font-size: 24px;
+
+        .contact-info h2 {
+            margin-bottom: 10px;
+            color: #0c6cea;
         }
-        .contact-box p {
+
+        .contact-info p {
             margin: 10px 0;
-            font-size: 16px;
         }
-        .contact-form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            font-size: 16px;
+
+        .contact-form-container h2 {
+            margin-bottom: 20px;
+            color: #0c6cea;
         }
-        .contact-form .input-group {
-            display: flex;
-            align-items: center;
-            margin-bottom: 16px;
-            gap: 8px;
-        }
-        .contact-form select, .contact-form input[type="tel"], .contact-form input[type="text"], .contact-form textarea {
-            padding: 12px;
-            border: 1px solid #ccc;
+
+        .contact-form .form-control {
             border-radius: 4px;
-            font-size: 16px;
-            flex: 1;
         }
-        .contact-form select {
-            width: 120px;
-        }
-        .contact-form input[type="tel"] {
-            flex: 2;
-        }
+
         .contact-form button {
-            background-color: #007BFF;
+            background-color: #007bff;
             color: #fff;
             border: none;
             padding: 12px 20px;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 18px;
             margin-top: 10px;
         }
+
         .contact-form button:hover {
             background-color: #0056b3;
         }
-        .contact-form .error {
-            color: red;
-            font-size: 14px;
-            margin-top: 10px;
+
+        .availability-container {
+            background-color: #1e1e1e;
+            color: #fff;
+            padding: 40px 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
+            text-align: center;
         }
+
+        .availability-container h2 {
+            margin-bottom: 20px;
+            color: #0c6cea;
+        }
+
+        .availability-info {
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            background-color: #131313;
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer__logo img {
+            width: 120px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .footer__links {
+            margin-bottom: 20px;
+        }
+
+        .footer__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .footer__link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer__link:hover {
+            color: #0c6cea;
+        }
+
+        .footer__contact {
+            margin-bottom: 20px;
+        }
+
+        .footer__contact-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .footer__contact-info {
+            font-size: 1rem;
+        }
+
+        .footer__contact-link {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer__contact-link:hover {
+            color: #0c6cea;
+        }
+
+        .footer__socials {
+            margin-bottom: 20px;
+        }
+
+        .footer__social-link {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer__social-link:hover {
+            color: #ff5722;
+            transform: scale(1.2);
+        }
+
+        .footer__bottom {
+            font-size: 0.9rem;
+            color: #d0d0d0;
+        }
+
         @media (max-width: 768px) {
-            .contact-grid {
+            .footer__list {
                 flex-direction: column;
-            }
-            .contact-form, .contact-box {
-                width: 100%;
+                gap: 10px;
             }
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-
-        /* Footer Styles */
-.footer {
-    background-color: #131313; /* Dark background to match the theme */
-    color: #ffffff; /* White text */
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.footer__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer__logo img {
-    width: 120px; /* Adjust as needed */
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.footer__links {
-    margin-bottom: 20px;
-}
-
-.footer__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-.footer__link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-.footer__link:hover {
-    color: #0c6cea; /* Change to a theme color on hover */
-}
-
-.footer__contact {
-    margin-bottom: 20px;
-}
-
-.footer__contact-title {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-.footer__contact-info {
-    font-size: 1rem;
-}
-
-.footer__contact-link {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.footer__contact-link:hover {
-    color: #0c6cea; /* Change to a theme color on hover */
-}
-
-.footer__socials {
-    margin-bottom: 20px;
-}
-
-.footer__social-link {
-    color: #ffffff;
-    font-size: 1.5rem;
-    margin: 0 10px;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.footer__social-link:hover {
-    color: #ff5722; /* Change to a theme color on hover */
-    transform: scale(1.2); /* Enlarge icons on hover */
-}
-
-.footer__bottom {
-    font-size: 0.9rem;
-    color: #d0d0d0;
-}
-
-@media (max-width: 768px) {
-    .footer__list {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-
-html {
-    scroll-behavior: smooth;
-}
-
-.navbar
-{
-    background: #13131313;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-   
-}
-.navbar__container
-{
-    display:flex;
-    justify-content:space-between;
-    height: 80px;
-    z-index: 1;
-    width: 100%; /*here is the majic that spaced between logo and list of navbars*/
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 50px;
-}
-
-
-/* Ensure the logo image fits well within the navbar */
-#navbar__logo-img {
-    height: 60px; /* Adjust height as needed */
-    width: auto; /* Maintain aspect ratio */
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-/* Keep the existing styles or adjust as needed */
-#navbar__logo {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 2rem ;
-}
- 
-
-.fa-gem
-{
-    margin-right: 0.5rem; /*we will add something cool right  here*/
-}
-
-.navbar__menu
-{
-    display: flex; /*here is the magic that made the lists in horizontal layout:)*/
-    align-items: center;
-    list-style: none;
-    text-align: center;
-
-}
-
-
-/* Navbar Link Styles */
-.navbar__links {
-    position: relative;
-    display: inline-block;
-    padding: 0 1rem;
-    text-decoration: none;
-    color: #edecec;
-    font-size: 1rem;
-    transition: color 0.3s ease; /* Smooth color transition */
-}
-
-/* Underline Effect */
-.navbar__links::before {
-    content: '';
-    position: absolute;
-    bottom: -5px; /* Position the underline below the text */
-    left: 0;
-    width: 0; /* Initial width of the underline */
-    height: 2px; /* Initial height of the underline */
-    background: cornflowerblue; /* Color of the underline */
-    transition: width 0.3s ease, height 0.3s ease, background 0.3s ease; /* Animate width, height, and background */
-}
-
-/* Hover Effect */
-.navbar__links:hover::before {
-    width: 100%; /* Full width on hover */
-    height: 4px; /* Increase the thickness of the underline on hover */
-    background: #0c6cea; /* Change underline color on hover if needed */
-}
-
-/* Adjusting the navbar items to align correctly */
-.navbar__item {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-
-
-
-.navbar__btn
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 1rem;
-    width: 100%;
-     
-}
-.button
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    padding: 10px 20px;
-    height: 100%;
-    width: 100%;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    background: grey;
-    color: black;
-
-}
-.button:hover
-{
-    background: purple;
-    transition: all 0.3s ease ;
-}
- 
-
-/*mobile media stuffs right here*/
-
-@media screen and (max-width: 960px) 
-{
-    .navbar__container
-    {
-        display: flex;
-        justify-content: space-between;
-        height: 80px;
-        z-index: 1;
-        width: 100%;
-        max-width: 1300px;
-        padding: 0; /*loogoo isa giddugalarra ture sana xiggiitti achi butuuf tammirii kaa'amedha*/
-
-    }
-
-    .navbar__menu
-    {
-        display: grid; /*taammiriin kan bir yeroo kun as taa'uu list menu kan daraddrame damn!*/
-        grid-template-columns: auto;
-        margin: 0;
-        width: 100%; /*ishiin kun dinqii ishii ittuma fuftee jirti!*/
-        position: absolute;
-        top: -1000px; /*asixxi billic jedhee kan inni bade */
-        opacity: 0;
-        transition: all 0.5s ease;
-        height: 50vh;
-        z-index: -1;
-        background: black;
- 
-    }
-    .navbar__menu.active
-    {
-         background: black;
-         top: 100%;
-         opacity: 1;
-         transition: all 0.5s ease;
-         z-index: 99;
-         height: 60vh;
-         font-size: 1.6rem;
-  
-
-    }
-    #navbar__logo
-    {
-        padding-left: 25px;
-
-    }
-
-    .navbar__toggle .bar
-    {
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        transition: all 0.3s ease-in-out;
-        background: #fff;
-
-    }
-    .navbar__item
-    {
-        width: 100%;
-    }
-    .navbar__links
-    {
-        text-align: center;
-        padding: 2rem;
-        width: 100%;
-        display: table;
-
-
-
-    }
-    #mobile-menu
-    {
-        position: absolute;
-        top: 20%;
-        right: 5%;
-        transform: translate(5%, 20%);
-
-    }
-    .navbar__btn
-    {
-        padding-bottom: 2rem;
-    }
-    .button
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 80%; /*ishiin kun immoo taammire giddu gala goote is gadi rarraé sanaf*/
-        height: 8px;
-        margin: 0;
-    }
-
-    .navbar__toggle .bar
-    {
-        display: block; /*ishiin kun immoo humburger akka mullattu gooti!*/
-        cursor: pointer;
-    }
-
-/* Adjusted styles for the hamburger icon when active */
-#mobile-menu.is-active .bar:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px); /* Rotate and move to form an X */
-}
-
-#mobile-menu.is-active .bar:nth-child(2) {
-    opacity: 0; /* Hide the middle bar */
-}
-
-#mobile-menu.is-active .bar:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px); /* Rotate and move to form an X */
-}
-
-
-}
-
     </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar__container">
             <a href="/" id="navbar__logo">
@@ -493,7 +368,7 @@ html {
                 </li>
                 <li class="navbar__item">
                     <a href="about.html" class="navbar__links">About</a>
-            </li>
+                </li>
                 <li class="navbar__item">
                     <a href="/contact.html" class="navbar__links">Contact</a>
                 </li>
@@ -501,164 +376,183 @@ html {
         </div>
     </nav>
 
+    <!-- Contact Section -->
     <div class="contact-container">
-        <div class="contact-section">
-            <h2>Contact Me</h2>
-            <div class="contact-grid">
-                <!-- Send a Message Section -->
-                <div class="contact-box">
-                    <h3>Send a Message</h3>
-                    <form id="contactForm" class="contact-form">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-
-                        <label for="phone">Phone Number:</label>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>Feel free to reach out to me through the following:</p>
+                <p>Email: <a href="mailto:contact@example.com" class="footer__contact-link">contact@example.com</a></p>
+                <p>Phone: <a href="tel:+1234567890" class="footer__contact-link">+123 456 7890</a></p>
+            </div>
+            <div class="contact-form-container">
+                <h2>Contact Form</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
                         <div class="input-group">
-                            <select id="country-code" name="country-code">
-                                <!-- Options will be dynamically added here -->
+                            <select class="form-control" id="phone-code">
+                                <!-- Africa -->
+                                <option value="+213">+213 (Algeria)</option>
+                                <option value="+225">+225 (Ivory Coast)</option>
+                                <option value="+226">+226 (Burkina Faso)</option>
+                                <option value="+227">+227 (Niger)</option>
+                                <option value="+228">+228 (Togo)</option>
+                                <option value="+229">+229 (Benin)</option>
+                                <option value="+230">+230 (Mauritius)</option>
+                                <option value="+231">+231 (Liberia)</option>
+                                <option value="+232">+232 (Sierra Leone)</option>
+                                <option value="+233">+233 (Ghana)</option>
+                                <option value="+234">+234 (Nigeria)</option>
+                                <option value="+235">+235 (Chad)</option>
+                                <option value="+236">+236 (Central African Republic)</option>
+                                <option value="+237">+237 (Cameroon)</option>
+                                <option value="+251">+251 (Ethiopia)</option>
+                                <option value="+256">+256 (Uganda)</option>
+                                <option value="+27">+27 (South Africa)</option>
+                                <option value="+261">+261 (Madagascar)</option>
+                                <option value="+220">+220 (The Gambia)</option>
+                            
+                                <!-- Europe -->
+                                <option value="+32">+32 (Belgium)</option>
+                                <option value="+33">+33 (France)</option>
+                                <option value="+34">+34 (Spain)</option>
+                                <option value="+36">+36 (Hungary)</option>
+                                <option value="+39">+39 (Italy)</option>
+                                <option value="+40">+40 (Romania)</option>
+                                <option value="+41">+41 (Switzerland)</option>
+                                <option value="+44">+44 (United Kingdom)</option>
+                                <option value="+45">+45 (Denmark)</option>
+                                <option value="+46">+46 (Sweden)</option>
+                                <option value="+47">+47 (Norway)</option>
+                                <option value="+48">+48 (Poland)</option>
+                                <option value="+49">+49 (Germany)</option>
+                                <option value="+353">+353 (Ireland)</option>
+                                <option value="+51">+51 (Peru)</option>
+                                <option value="+52">+52 (Mexico)</option>
+                            
+                                <!-- Asia -->
+                                <option value="+60">+60 (Malaysia)</option>
+                                <option value="+62">+62 (Indonesia)</option>
+                                <option value="+63">+63 (Philippines)</option>
+                                <option value="+64">+64 (New Zealand)</option>
+                                <option value="+65">+65 (Singapore)</option>
+                                <option value="+66">+66 (Thailand)</option>
+                                <option value="+81">+81 (Japan)</option>
+                                <option value="+82">+82 (South Korea)</option>
+                                <option value="+84">+84 (Vietnam)</option>
+                                <option value="+86">+86 (China)</option>
+                                <option value="+91">+91 (India)</option>
+                                <option value="+92">+92 (Pakistan)</option>
+                                <option value="+93">+93 (Afghanistan)</option>
+                                <option value="+94">+94 (Sri Lanka)</option>
+                                <option value="+95">+95 (Myanmar)</option>
+                                <option value="+98">+98 (Iran)</option>
+                                <option value="+880">+880 (Bangladesh)</option>
+                                <option value="+977">+977 (Nepal)</option>
+                                <!-- Former USSR countries -->
+                                <option value="+7">+7 (Russia)</option>
+                                <option value="+375">+375 (Belarus)</option>
+                                <option value="+380">+380 (Ukraine)</option>
+                                <option value="+381">+381 (Serbia)</option>
+                                <option value="+382">+382 (Montenegro)</option>
+                                <option value="+383">+383 (Kosovo)</option>
+                                <option value="+387">+387 (Bosnia and Herzegovina)</option>
+                                <option value="+389">+389 (North Macedonia)</option>
+                                <option value="+995">+995 (Georgia)</option>
+                                <option value="+996">+996 (Kyrgyzstan)</option>
+                                <option value="+998">+998 (Uzbekistan)</option>
+                                <option value="+997">+997 (Kazakhstan)</option>
+                                <option value="+993">+993 (Turkmenistan)</option>
+                                <option value="+994">+994 (Azerbaijan)</option>
+                            
+                                <!-- Americas -->
+                                <option value="+1">+1 (United States / Canada)</option>
+                                <option value="+54">+54 (Argentina)</option>
+                                <option value="+55">+55 (Brazil)</option>
+                                <option value="+56">+56 (Chile)</option>
+                                <option value="+57">+57 (Colombia)</option>
+                                <option value="+58">+58 (Venezuela)</option>
                             </select>
-                            <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required pattern="[0-9]{1,15}" title="Phone number should be between 1 and 15 digits">
+                            
+                            
+                            <input type="text" class="form-control" id="phone" placeholder="Your Phone Number">
                         </div>
-
-                        <label for="subject">Subject:</label>
-                        <input type="text" id="subject" name="subject" required>
-
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-
-                        <button type="submit">Send</button>
-                        <div id="formMessage" class="error"></div>
-                    </form>
-                </div>
-
-                <!-- Get in Touch Section -->
-                <div class="contact-box">
-                    <h3>Get in Touch</h3>
-                    <p><strong>Phone:</strong> +123 456 7890</p>
-                    <p><strong>Email:</strong> <a href="mailto:info@weltekji.com">info@weltekji.com</a></p>
-                    <p><strong>Address:</strong> 1234 Street Name, City, Country</p>
-                </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
             </div>
         </div>
     </div>
 
+    <!-- Availability Section -->
+    <div class="availability-container">
+        <h2>Availability</h2>
+        <div class="availability-info">
+            <p>Monday to Friday: 9 AM - 6 PM</p>
+            <p>Saturday: 10 AM - 4 PM</p>
+            <p>Sunday: Closed</p>
+        </div>
+    </div>
 
-     <!-- Footer Section -->
-     <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="footer__container">
             <div class="footer__logo">
-                <a href="/">
-                    <img src="Logo weltekji.png" alt="WEL Logo" id="footer__logo-img">
-                </a>
+                <img src="Logo weltekji.png" alt="Footer Logo">
             </div>
             <div class="footer__links">
                 <ul class="footer__list">
-                    <li><a href="index.html" class="footer__link">Home</a></li>
-                    <li><a href="#portfolio" class="footer__link">Service</a></li>
-                    <li><a href="blog.html" class="footer__link">Blog</a></li>
+                    <li><a href="/index.html" class="footer__link">Home</a></li>
+                    <li><a href="/index.html#portfolio" class="footer__link">Service</a></li>
+                    <li><a href="/blog.html" class="footer__link">Blog</a></li>
+                    <li><a href="about.html" class="footer__link">About</a></li>
                     <li><a href="/contact.html" class="footer__link">Contact</a></li>
-                    <li><a href="about.html" class="footer__link">About Me</a></li>
                 </ul>
             </div>
             <div class="footer__contact">
-                <p class="footer__contact-title">Contact Information</p>
-                <p class="footer__contact-info">
-                    Email: <a href="mailto:info@weltekji.com" class="footer__contact-link">info@weltekji.com</a><br>
-                    Phone: <a href="tel:+1234567890" class="footer__contact-link">+123 456 7890</a>
-                </p>
+                <div class="footer__contact-title">Get in Touch</div>
+                <div class="footer__contact-info">
+                    <a href="mailto:contact@example.com" class="footer__contact-link">contact@example.com</a><br>
+                    <a href="tel:+1234567890" class="footer__contact-link">+123 456 7890</a>
+                </div>
             </div>
             <div class="footer__socials">
-                <a href="https://x.com/AbenezerRW" class="footer__social-link" target="_blank">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/abenezer-regasa-777522306/" class="footer__social-link" target="_blank">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://www.facebook.com/yourprofile" class="footer__social-link" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
+                <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
             </div>
-        </div>
-        <div class="footer__bottom">
-            <p>&copy; 2024 Weltekji. All rights reserved.</p>
+            <div class="footer__bottom">
+                &copy; 2024 Your Website. All rights reserved.
+            </div>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Function to smooth scroll to a section
-    function smoothScrollTo(elementId) {
-        const targetElement = document.getElementById(elementId);
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
-
-    // Check if there's a hash in the URL
-    const hash = window.location.hash;
-    if (hash) {
-        const targetId = hash.substring(1); // Remove the '#' from the hash
-        smoothScrollTo(targetId);
-    }
-});
-
-
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const countryCodeSelect = document.getElementById('country-code');
-            const phoneInput = document.getElementById('phone');
-            const countryCodes = [
-                { code: '+213', country: 'Algeria' },
-                { code: '+229', country: 'Benin' },
-                { code: '+254', country: 'Kenya' },
-
-
-            ];
-
-            // Sort the country codes alphabetically by country name
-            countryCodes.sort((a, b) => a.country.localeCompare(b.country));
-
-            // Populate the dropdown with country codes
-            countryCodes.forEach(function(country) {
-                const option = document.createElement('option');
-                option.value = country.code;
-                option.textContent = `${country.code} (${country.country})`;
-                countryCodeSelect.appendChild(option);
-            });
-
-            // Update the phone input placeholder based on selected country code
-            countryCodeSelect.addEventListener('change', function() {
-                const selectedCode = countryCodeSelect.value;
-                phoneInput.placeholder = `Enter phone number (e.g., ${selectedCode}123456789)`;
-            });
-
-            // Initialize placeholder with default selected code
-            phoneInput.placeholder = `Enter phone number (e.g., ${countryCodeSelect.value}123456789)`;
+        document.getElementById('mobile-menu').addEventListener('click', function () {
+            document.querySelector('.navbar__menu').classList.toggle('active');
+            this.classList.toggle('is-active');
         });
-
-
-
-        const menu = document.querySelector('#mobile-menu');
-const menuLinks = document.querySelector('.navbar__menu');
-const navLinks = document.querySelectorAll('.navbar__links'); // Select all the links in the navbar
-
-menu.addEventListener('click', function() {
-   menu.classList.toggle('is-active');
-   menuLinks.classList.toggle('active');
-});
-
-// Close the mobile menu when any link is clicked
-navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-        menu.classList.remove('is-active');
-        menuLinks.classList.remove('active');
-    });
-});
-
     </script>
-
 </body>
 </html>
