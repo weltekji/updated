@@ -1,0 +1,675 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:'Kumbh Sans', sans-serif;
+    background: url(/Wallpapers/My\ website\ globe.gif);
+  
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar
+{
+    background: #13131313;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+   
+}
+.navbar__container
+{
+    display:flex;
+    justify-content:space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%; /*here is the majic that spaced between logo and list of navbars*/
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+
+/* Ensure the logo image fits well within the navbar */
+#navbar__logo-img {
+    height: 60px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Keep the existing styles or adjust as needed */
+#navbar__logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem ;
+}
+ 
+
+.fa-gem
+{
+    margin-right: 0.5rem; /*we will add something cool right  here*/
+}
+
+.navbar__menu
+{
+    display: flex; /*here is the magic that made the lists in horizontal layout:)*/
+    align-items: center;
+    list-style: none;
+    text-align: center;
+
+}
+
+
+/* Navbar Link Styles */
+.navbar__links {
+    position: relative;
+    display: inline-block;
+    padding: 0 1rem;
+    text-decoration: none;
+    color: #edecec;
+    font-size: 1rem;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Underline Effect */
+.navbar__links::before {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Position the underline below the text */
+    left: 0;
+    width: 0; /* Initial width of the underline */
+    height: 2px; /* Initial height of the underline */
+    background: cornflowerblue; /* Color of the underline */
+    transition: width 0.3s ease, height 0.3s ease, background 0.3s ease; /* Animate width, height, and background */
+}
+
+/* Hover Effect */
+.navbar__links:hover::before {
+    width: 100%; /* Full width on hover */
+    height: 4px; /* Increase the thickness of the underline on hover */
+    background: #0c6cea; /* Change underline color on hover if needed */
+}
+
+/* Adjusting the navbar items to align correctly */
+.navbar__item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+
+
+
+.navbar__btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+     
+}
+.button
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: grey;
+    color: black;
+
+}
+.button:hover
+{
+    background: purple;
+    transition: all 0.3s ease ;
+}
+ 
+
+/*mobile media stuffs right here*/
+
+@media screen and (max-width: 960px) 
+{
+    .navbar__container
+    {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0; /*loogoo isa giddugalarra ture sana xiggiitti achi butuuf tammirii kaa'amedha*/
+
+    }
+
+    .navbar__menu
+    {
+        display: grid; /*taammiriin kan bir yeroo kun as taa'uu list menu kan daraddrame damn!*/
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%; /*ishiin kun dinqii ishii ittuma fuftee jirti!*/
+        position: absolute;
+        top: -1000px; /*asixxi billic jedhee kan inni bade */
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+        background: black;
+ 
+    }
+    .navbar__menu.active
+    {
+         background: black;
+         top: 100%;
+         opacity: 1;
+         transition: all 0.5s ease;
+         z-index: 99;
+         height: 60vh;
+         font-size: 1.6rem;
+  
+
+    }
+    #navbar__logo
+    {
+        padding-left: 25px;
+
+    }
+
+    .navbar__toggle .bar
+    {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #fff;
+
+    }
+    .navbar__item
+    {
+        width: 100%;
+    }
+    .navbar__links
+    {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+
+
+
+    }
+    #mobile-menu
+    {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+
+    }
+    .navbar__btn
+    {
+        padding-bottom: 2rem;
+    }
+    .button
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%; /*ishiin kun immoo taammire giddu gala goote is gadi rarraé sanaf*/
+        height: 8px;
+        margin: 0;
+    }
+
+    .navbar__toggle .bar
+    {
+        display: block; /*ishiin kun immoo humburger akka mullattu gooti!*/
+        cursor: pointer;
+    }
+
+/* Adjusted styles for the hamburger icon when active */
+#mobile-menu.is-active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); /* Rotate and move to form an X */
+}
+
+#mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0; /* Hide the middle bar */
+}
+
+#mobile-menu.is-active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px); /* Rotate and move to form an X */
+}
+
+
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/Wallpapers/your-image.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero__content {
+    max-width: 800px;
+}
+
+.hero__title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero__subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.hero__description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero__button {
+    padding: 15px 30px;
+    background:  hwb(221 18% 28%);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+.hero__button:hover {
+    background: hwb(250 30% 40%);
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .hero__title {
+        font-size: 2.5rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero__description {
+        font-size: 1rem;
+    }
+
+    .hero__button {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+}
+
+
+/* Portfolio Section */
+.portfolio {
+    padding: 60px 20px;
+    background-color: #131313; /* Match the dark background color */
+    text-align: center;
+}
+
+.portfolio__title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ffffff; /* White text for good contrast */
+}
+
+.portfolio__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio__item {
+    background: #1c1c1c; /* Slightly lighter dark background for contrast */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.portfolio__item:hover {
+    transform: translateY(-10px);
+    background-color: #2a2a2a; /* Lighter background on hover */
+}
+
+.portfolio__image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 2px solid #555; /* Add a light border for distinction */
+}
+
+.portfolio__caption {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #e0e0e0; /* Light gray for captions */
+}
+
+.portfolio__description {
+    font-size: 1rem;
+    color: #b0b0b0; /* Lighter gray for descriptions */
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 960px) {
+    .portfolio__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .portfolio__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CTA Section */
+/* CTA Section */
+.cta {
+    background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/Wallpapers/your-image.jpg') center/cover no-repeat; /* Background similar to hero section */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px; /* Padding to match hero section */
+}
+
+.cta__content {
+    max-width: 800px; /* Max width for content */
+}
+
+.cta__title {
+    font-size: 3rem; /* Match hero section title size */
+    margin-bottom: 20px;
+}
+
+.cta__text {
+    font-size: 1.2rem; /* Match hero section description size */
+    margin-bottom: 30px;
+    color: #ccc; /* Light color for text */
+}
+
+.cta__button {
+    padding: 15px 30px; /* Button padding */
+    background: hwb(85 5% 49%); /* Button background color */
+    color: white; /* Button text color */
+    text-decoration: none;
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1.2rem; /* Button text size */
+    transition: background 0.3s ease; /* Smooth background color transition */
+}
+
+.cta__button:hover {
+    background: hwb(250 30% 40%); /* Darker shade on hover */
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .cta__title {
+        font-size: 2.5rem; /* Smaller title size for mobile */
+    }
+
+    .cta__text {
+        font-size: 1rem; /* Smaller text size for mobile */
+    }
+
+    .cta__button {
+        font-size: 1rem; /* Smaller button text size */
+        padding: 12px 25px; /* Adjust padding for smaller screens */
+    }
+}
+
+
+.about-me {
+    background-color: #1a1a1a; /* Dark background */
+    color: #ffffff; /* White text */
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-me:hover {
+    transform: translateY(-5px); /* Lift the section slightly on hover */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+}
+
+.about-me__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.about-me__image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Circular image */
+    margin-right: 30px;
+    border: 3px solid #555; /* Light border for distinction */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-me__image:hover {
+    transform: scale(1.1); /* Enlarge image slightly on hover */
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2); /* Add glow effect */
+}
+
+.about-me__text {
+    max-width: 600px;
+}
+
+.about-me__title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #f0f0f0;
+    transition: color 0.3s ease;
+}
+
+.about-me__title:hover {
+    color: #0b99db; /* Change color on hover */
+}
+
+.about-me__description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #d0d0d0;
+    transition: color 0.3s ease;
+}
+
+.about-me__description:hover {
+    color: #0b99db; /* Change color on hover */
+}
+
+.about-me__socials {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.about-me__social-link {
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 15px;
+    color: white; /* Ensure the icons are visible */
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.about-me__social-link:hover {
+    color: #ff5722; /* Change color on hover */
+    transform: scale(1.2); /* Enlarge the icon on hover */
+}
+
+.about-me__social-icon {
+    width: 30px;
+    height: 30px;
+    filter: invert(100%); /* Make icons white */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.about-me__social-link i {
+    display: inline-block;
+}
+
+.about-me__button {
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.about-me__button:hover {
+    background-color: #e64a19;
+    transform: translateY(-3px);
+}
+
+
+
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .about-me__content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-me__image {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+/* Footer Styles */
+.footer {
+    background-color: #131313; /* Dark background to match the theme */
+    color: #ffffff; /* White text */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__logo img {
+    width: 120px; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.footer__links {
+    margin-bottom: 20px;
+}
+
+.footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.footer__link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+    color: #0c6cea; /* Change to a theme color on hover */
+}
+
+.footer__contact {
+    margin-bottom: 20px;
+}
+
+.footer__contact-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.footer__contact-info {
+    font-size: 1rem;
+}
+
+.footer__contact-link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer__contact-link:hover {
+    color: #0c6cea; /* Change to a theme color on hover */
+}
+
+.footer__socials {
+    margin-bottom: 20px;
+}
+
+.footer__social-link {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer__social-link:hover {
+    color: #ff5722; /* Change to a theme color on hover */
+    transform: scale(1.2); /* Enlarge icons on hover */
+}
+
+.footer__bottom {
+    font-size: 0.9rem;
+    color: #d0d0d0;
+}
+
+@media (max-width: 768px) {
+    .footer__list {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
