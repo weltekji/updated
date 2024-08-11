@@ -381,129 +381,128 @@
     </nav>
 
     <!-- Contact Section -->
-    <div class="contact-container">
-        <div class="contact-content">
-            <div class="contact-info">
-                <h2>Get in Touch</h2>
-                <p>Feel free to reach out to me through the following:</p>
-                <p>Email: <a href="mailto:contact@example.com" class="footer__contact-link">weltekji@gmail.com</a></p>
-                <p>Phone: <a href="tel:+1234567890" class="footer__contact-link">+393509051999</a></p>
-            </div>
-            <div class="contact-form-container">
-                <h2>Contact Form</h2>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+<div class="contact-container">
+    <div class="contact-content">
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Feel free to reach out to me through the following:</p>
+            <p>Email: <a href="mailto:contact@example.com" class="footer__contact-link">weltekji@gmail.com</a></p>
+            <p>Phone: <a href="tel:+1234567890" class="footer__contact-link">+393509051999</a></p>
+        </div>
+        <div class="contact-form-container">
+            <h2>Contact Form</h2>
+            <form action="https://formspree.io/f/mnnavgpl" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <div class="input-group">
+                        <select class="form-control" id="phone-code" name="phone_code">
+                            <!-- Africa -->
+                            <option value="+213">+213 (Algeria)</option>
+                            <option value="+225">+225 (Ivory Coast)</option>
+                            <option value="+226">+226 (Burkina Faso)</option>
+                            <option value="+227">+227 (Niger)</option>
+                            <option value="+228">+228 (Togo)</option>
+                            <option value="+229">+229 (Benin)</option>
+                            <option value="+230">+230 (Mauritius)</option>
+                            <option value="+231">+231 (Liberia)</option>
+                            <option value="+232">+232 (Sierra Leone)</option>
+                            <option value="+233">+233 (Ghana)</option>
+                            <option value="+234">+234 (Nigeria)</option>
+                            <option value="+235">+235 (Chad)</option>
+                            <option value="+236">+236 (Central African Republic)</option>
+                            <option value="+237">+237 (Cameroon)</option>
+                            <option value="+251">+251 (Ethiopia)</option>
+                            <option value="+256">+256 (Uganda)</option>
+                            <option value="+27">+27 (South Africa)</option>
+                            <option value="+261">+261 (Madagascar)</option>
+                            <option value="+220">+220 (The Gambia)</option>
+                        
+                            <!-- Europe -->
+                            <option value="+32">+32 (Belgium)</option>
+                            <option value="+33">+33 (France)</option>
+                            <option value="+34">+34 (Spain)</option>
+                            <option value="+36">+36 (Hungary)</option>
+                            <option value="+39">+39 (Italy)</option>
+                            <option value="+40">+40 (Romania)</option>
+                            <option value="+41">+41 (Switzerland)</option>
+                            <option value="+44">+44 (United Kingdom)</option>
+                            <option value="+45">+45 (Denmark)</option>
+                            <option value="+46">+46 (Sweden)</option>
+                            <option value="+47">+47 (Norway)</option>
+                            <option value="+48">+48 (Poland)</option>
+                            <option value="+49">+49 (Germany)</option>
+                            <option value="+353">+353 (Ireland)</option>
+                            <option value="+51">+51 (Peru)</option>
+                            <option value="+52">+52 (Mexico)</option>
+                        
+                            <!-- Asia -->
+                            <option value="+60">+60 (Malaysia)</option>
+                            <option value="+62">+62 (Indonesia)</option>
+                            <option value="+63">+63 (Philippines)</option>
+                            <option value="+64">+64 (New Zealand)</option>
+                            <option value="+65">+65 (Singapore)</option>
+                            <option value="+66">+66 (Thailand)</option>
+                            <option value="+81">+81 (Japan)</option>
+                            <option value="+82">+82 (South Korea)</option>
+                            <option value="+84">+84 (Vietnam)</option>
+                            <option value="+86">+86 (China)</option>
+                            <option value="+91">+91 (India)</option>
+                            <option value="+92">+92 (Pakistan)</option>
+                            <option value="+93">+93 (Afghanistan)</option>
+                            <option value="+94">+94 (Sri Lanka)</option>
+                            <option value="+95">+95 (Myanmar)</option>
+                            <option value="+98">+98 (Iran)</option>
+                            <option value="+880">+880 (Bangladesh)</option>
+                            <option value="+977">+977 (Nepal)</option>
+                            <!-- Former USSR countries -->
+                            <option value="+7">+7 (Russia)</option>
+                            <option value="+375">+375 (Belarus)</option>
+                            <option value="+380">+380 (Ukraine)</option>
+                            <option value="+381">+381 (Serbia)</option>
+                            <option value="+382">+382 (Montenegro)</option>
+                            <option value="+383">+383 (Kosovo)</option>
+                            <option value="+387">+387 (Bosnia and Herzegovina)</option>
+                            <option value="+389">+389 (North Macedonia)</option>
+                            <option value="+995">+995 (Georgia)</option>
+                            <option value="+996">+996 (Kyrgyzstan)</option>
+                            <option value="+998">+998 (Uzbekistan)</option>
+                            <option value="+997">+997 (Kazakhstan)</option>
+                            <option value="+993">+993 (Turkmenistan)</option>
+                            <option value="+994">+994 (Azerbaijan)</option>
+                        
+                            <!-- Americas -->
+                            <option value="+1">+1 (United States / Canada)</option>
+                            <option value="+54">+54 (Argentina)</option>
+                            <option value="+55">+55 (Brazil)</option>
+                            <option value="+56">+56 (Chile)</option>
+                            <option value="+57">+57 (Colombia)</option>
+                            <option value="+58">+58 (Venezuela)</option>
+                        </select>
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Your Phone Number">
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email address</label>
-                        <input type="email" class="form-control" id="email" placeholder="Your Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" class="form-control" id="subject" placeholder="Subject">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <div class="input-group">
-                            <select class="form-control" id="phone-code">
-                                <!-- Africa -->
-                                <option value="+213">+213 (Algeria)</option>
-                                <option value="+225">+225 (Ivory Coast)</option>
-                                <option value="+226">+226 (Burkina Faso)</option>
-                                <option value="+227">+227 (Niger)</option>
-                                <option value="+228">+228 (Togo)</option>
-                                <option value="+229">+229 (Benin)</option>
-                                <option value="+230">+230 (Mauritius)</option>
-                                <option value="+231">+231 (Liberia)</option>
-                                <option value="+232">+232 (Sierra Leone)</option>
-                                <option value="+233">+233 (Ghana)</option>
-                                <option value="+234">+234 (Nigeria)</option>
-                                <option value="+235">+235 (Chad)</option>
-                                <option value="+236">+236 (Central African Republic)</option>
-                                <option value="+237">+237 (Cameroon)</option>
-                                <option value="+251">+251 (Ethiopia)</option>
-                                <option value="+256">+256 (Uganda)</option>
-                                <option value="+27">+27 (South Africa)</option>
-                                <option value="+261">+261 (Madagascar)</option>
-                                <option value="+220">+220 (The Gambia)</option>
-                            
-                                <!-- Europe -->
-                                <option value="+32">+32 (Belgium)</option>
-                                <option value="+33">+33 (France)</option>
-                                <option value="+34">+34 (Spain)</option>
-                                <option value="+36">+36 (Hungary)</option>
-                                <option value="+39">+39 (Italy)</option>
-                                <option value="+40">+40 (Romania)</option>
-                                <option value="+41">+41 (Switzerland)</option>
-                                <option value="+44">+44 (United Kingdom)</option>
-                                <option value="+45">+45 (Denmark)</option>
-                                <option value="+46">+46 (Sweden)</option>
-                                <option value="+47">+47 (Norway)</option>
-                                <option value="+48">+48 (Poland)</option>
-                                <option value="+49">+49 (Germany)</option>
-                                <option value="+353">+353 (Ireland)</option>
-                                <option value="+51">+51 (Peru)</option>
-                                <option value="+52">+52 (Mexico)</option>
-                            
-                                <!-- Asia -->
-                                <option value="+60">+60 (Malaysia)</option>
-                                <option value="+62">+62 (Indonesia)</option>
-                                <option value="+63">+63 (Philippines)</option>
-                                <option value="+64">+64 (New Zealand)</option>
-                                <option value="+65">+65 (Singapore)</option>
-                                <option value="+66">+66 (Thailand)</option>
-                                <option value="+81">+81 (Japan)</option>
-                                <option value="+82">+82 (South Korea)</option>
-                                <option value="+84">+84 (Vietnam)</option>
-                                <option value="+86">+86 (China)</option>
-                                <option value="+91">+91 (India)</option>
-                                <option value="+92">+92 (Pakistan)</option>
-                                <option value="+93">+93 (Afghanistan)</option>
-                                <option value="+94">+94 (Sri Lanka)</option>
-                                <option value="+95">+95 (Myanmar)</option>
-                                <option value="+98">+98 (Iran)</option>
-                                <option value="+880">+880 (Bangladesh)</option>
-                                <option value="+977">+977 (Nepal)</option>
-                                <!-- Former USSR countries -->
-                                <option value="+7">+7 (Russia)</option>
-                                <option value="+375">+375 (Belarus)</option>
-                                <option value="+380">+380 (Ukraine)</option>
-                                <option value="+381">+381 (Serbia)</option>
-                                <option value="+382">+382 (Montenegro)</option>
-                                <option value="+383">+383 (Kosovo)</option>
-                                <option value="+387">+387 (Bosnia and Herzegovina)</option>
-                                <option value="+389">+389 (North Macedonia)</option>
-                                <option value="+995">+995 (Georgia)</option>
-                                <option value="+996">+996 (Kyrgyzstan)</option>
-                                <option value="+998">+998 (Uzbekistan)</option>
-                                <option value="+997">+997 (Kazakhstan)</option>
-                                <option value="+993">+993 (Turkmenistan)</option>
-                                <option value="+994">+994 (Azerbaijan)</option>
-                            
-                                <!-- Americas -->
-                                <option value="+1">+1 (United States / Canada)</option>
-                                <option value="+54">+54 (Argentina)</option>
-                                <option value="+55">+55 (Brazil)</option>
-                                <option value="+56">+56 (Chile)</option>
-                                <option value="+57">+57 (Colombia)</option>
-                                <option value="+58">+58 (Venezuela)</option>
-                            </select>
-                            
-                            
-                            <input type="text" class="form-control" id="phone" placeholder="Your Phone Number">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send</button>
-                </form>
-            </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
         </div>
     </div>
+</div>
+
 
     <!-- Availability Section -->
     <div class="availability-container">
