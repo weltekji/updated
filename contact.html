@@ -7,292 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Additional CSS for animation and alignment */
-        body {
-            font-family: Arial, sans-serif;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            overflow-x: hidden;
-        }
-
-        .about-me {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 50px;
-            background-color: #000000;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 20px auto;
-            max-width: 1200px;
-            border-radius: 8px;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        .about-me__image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #333;
-            margin-bottom: 20px;
-            animation: zoomIn 1.5s ease-in-out;
-        }
-
-        .about-me__title {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .about-me__description {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .about-me__socials {
-            margin: 20px 0;
-        }
-
-        .about-me__social-link {
-            color: #ffffff;
-            margin: 0 10px;
-            font-size: 1.5em;
-            transition: color 0.3s ease;
-        }
-
-        .about-me__social-link:hover {
-            color: #026a75;
-        }
-
-        .about-me__skills {
-            text-align: left;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .about-me__skills h3 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
-
-        .about-me__skills ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .about-me__skills li {
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        .about-me__skills span {
-            font-weight: bold;
-        }
-
-        .about-me__button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            color: #fff;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .about-me__button:hover {
-            background-color: #0056b3;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes zoomIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        @media (max-width: 768px) {
-            .about-me {
-                padding: 20px;
-            }
-
-            .about-me__title {
-                font-size: 1.5em;
-            }
-
-            .about-me__description {
-                font-size: 1em;
-            }
-
-            .about-me__skills li {
-                font-size: 1em;
-            }
-
-            .about-me__button {
-                font-size: 1em;
-            }
-        }
-
-
-        /* Reset some default styles */
-body {
+       /* Base Styles */
+/* Base Styles */
+html, body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    background-color: #f4f4f4;
-    line-height: 1.6;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling on the entire page */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    color: #333; /* Base text color */
 }
-
-/* Container for about-me section */
-.about-me {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px;
-    background-color: #000;
-    color: #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 1200px;
-    border-radius: 8px;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-/* Profile image */
-.about-me__image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #fff;
-    margin-bottom: 20px;
-    animation: zoomIn 1.5s ease-in-out;
-}
-
-/* Title styling */
-.about-me__title {
-    font-size: 2.4rem;
-    margin-bottom: 15px;
-    color: #fff;
-}
-
-/* Description text */
-.about-me__description {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 25px;
-}
-
-/* Social media links */
-.about-me__socials {
-    margin: 15px 0;
-}
-
-.about-me__social-link {
-    color: #fff;
-    margin: 0 12px;
-    font-size: 1.6rem;
-    transition: color 0.3s;
-}
-
-.about-me__social-link:hover {
-    color: #03a9f4;
-}
-
-/* Skills section styling */
-.about-me__skills {
-    text-align: left;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.about-me__skills h3 {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-}
-
-.about-me__skills ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.about-me__skills li {
-    margin-bottom: 12px;
-    font-size: 1.1rem;
-}
-
-.about-me__skills span {
-    font-weight: bold;
-}
-
-/* Button styling */
-.about-me__button {
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 1.1rem;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.about-me__button:hover {
-    background-color: #0056b3;
-}
-
-/* Keyframes for animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes zoomIn {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .about-me {
-        padding: 20px;
-    }
-
-    .about-me__title {
-        font-size: 1.8rem;
-    }
-
-    .about-me__description {
-        font-size: 1rem;
-    }
-
-    .about-me__skills li {
-        font-size: 1rem;
-    }
-
-    .about-me__button {
-        font-size: 1rem;
-    }
-}
-
-
- 
- 
 
 /* Contact Section Styles */
 .contact-container {
@@ -300,48 +24,53 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 40px;
-    background: linear-gradient(135deg, #f0f0f0 25%, #ffffff 25%, #ffffff 50%, #f0f0f0 50%, #f0f0f0 75%, #ffffff 75%, #ffffff);
+    background: linear-gradient(135deg, #e0f7fa 25%, #b9fbc0 25%, #b9fbc0 50%, #e0f7fa 50%, #e0f7fa 75%, #b9fbc0 75%, #b9fbc0);
     background-size: 50px 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     margin: 20px auto;
-    max-width: 1200px;
-    border-radius: 8px;
-    animation: fadeIn 1.5s ease-in-out;
+    max-width: 100%; /* Ensure the container does not exceed the viewport width */
+    border-radius: 12px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    overflow: hidden; /* Prevent any internal overflow */
+    animation: fadeInUp 1.5s ease-out;
 }
 
 .contact-content {
     width: 100%;
-    max-width: 900px;
+    max-width: 800px; /* Responsive width */
     display: flex;
     flex-direction: column;
     gap: 30px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 .contact-info,
 .contact-form-container {
     background-color: #ffffff;
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: slideUp 1s ease-out;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    overflow: hidden; /* Prevent any internal overflow */
+    animation: fadeIn 1s ease-in-out;
 }
 
 .contact-info h2,
 .contact-form-container h2 {
-    font-size: 2em;
+    font-size: 2.2em;
     margin-bottom: 15px;
-    color: #333;
-    animation: fadeIn 1.2s ease-in-out;
+    color: #00796b; /* Dark teal for headings */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
 }
 
 .contact-info p {
     font-size: 1.1em;
     margin: 10px 0;
-    color: #666;
+    color: #555; /* Darker grey for text */
 }
 
 .footer__contact-link {
-    color: #007BFF;
+    color: #00796b;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -349,7 +78,7 @@ body {
 
 .footer__contact-link:hover {
     text-decoration: underline;
-    color: #0056b3;
+    color: #004d40; /* Darker teal on hover */
 }
 
 .contact-form {
@@ -361,31 +90,33 @@ body {
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
 }
 
 .form-group label {
     font-size: 1.1em;
-    color: #333;
+    color: #00796b;
 }
 
 .form-control {
-    padding: 10px;
+    padding: 12px;
     font-size: 1em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
+    border: 1px solid #b2dfdb;
+    border-radius: 6px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-control:focus {
-    border-color: #007BFF;
+    border-color: #00796b;
+    box-shadow: 0 0 5px rgba(0, 121, 107, 0.3);
     outline: none;
 }
 
 .input-group {
     display: flex;
-    gap: 10px;
+    gap: 12px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 .input-group .form-control {
@@ -393,31 +124,35 @@ body {
 }
 
 .btn-primary {
-    background-color: #007BFF;
+    background-color: #00796b;
     color: #fff;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
+    border-radius: 6px;
+    padding: 12px 24px;
     font-size: 1.1em;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 121, 107, 0.2);
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #004d40;
     transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 121, 107, 0.3);
 }
 
+/* Keyframes for Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-@keyframes slideUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
+/* Responsive Styles */
 @media (max-width: 768px) {
     .contact-container {
         padding: 20px;
@@ -425,7 +160,7 @@ body {
 
     .contact-info h2,
     .contact-form-container h2 {
-        font-size: 1.5em;
+        font-size: 1.6em;
     }
 
     .contact-info p,
@@ -441,6 +176,7 @@ body {
         font-size: 1em;
     }
 }
+
 
     </style>
 </head>
@@ -467,149 +203,128 @@ body {
         </div>
     </nav>
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
- <!-- Contact Section -->
- <div class="contact-container">
-    <div class="contact-content">
-        <div class="contact-info">
-            <h2>Get in Touch</h2>
-            <p>Feel free to reach out to me through the following:</p>
-            <p>Email: <a href="mailto:contact@example.com" class="footer__contact-link">weltekji@gmail.com</a></p>
-            <p>Phone: <a href="tel:+1234567890" class="footer__contact-link">+393509051999</a></p>
-        </div>
-        <div class="contact-form-container">
-            <h2>Contact Form</h2>
-            <form action="https://formspree.io/f/mnnavgpl" method="POST" class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <div class="input-group">
-                        <select class="form-control" id="phone-code" name="phone_code">
-                            <!-- Africa -->
-                            <option value="+213">+213 (Algeria)</option>
-                            <option value="+225">+225 (Ivory Coast)</option>
-                            <option value="+226">+226 (Burkina Faso)</option>
-                            <option value="+227">+227 (Niger)</option>
-                            <option value="+228">+228 (Togo)</option>
-                            <option value="+229">+229 (Benin)</option>
-                            <option value="+230">+230 (Mauritius)</option>
-                            <option value="+231">+231 (Liberia)</option>
-                            <option value="+232">+232 (Sierra Leone)</option>
-                            <option value="+233">+233 (Ghana)</option>
-                            <option value="+234">+234 (Nigeria)</option>
-                            <option value="+235">+235 (Chad)</option>
-                            <option value="+236">+236 (Central African Republic)</option>
-                            <option value="+237">+237 (Cameroon)</option>
-                            <option value="+251">+251 (Ethiopia)</option>
-                            <option value="+256">+256 (Uganda)</option>
-                            <option value="+27">+27 (South Africa)</option>
-                            <option value="+261">+261 (Madagascar)</option>
-                            <option value="+220">+220 (The Gambia)</option>
-                        
-                            <!-- Europe -->
-                            <option value="+32">+32 (Belgium)</option>
-                            <option value="+33">+33 (France)</option>
-                            <option value="+34">+34 (Spain)</option>
-                            <option value="+36">+36 (Hungary)</option>
-                            <option value="+39">+39 (Italy)</option>
-                            <option value="+40">+40 (Romania)</option>
-                            <option value="+41">+41 (Switzerland)</option>
-                            <option value="+44">+44 (United Kingdom)</option>
-                            <option value="+45">+45 (Denmark)</option>
-                            <option value="+46">+46 (Sweden)</option>
-                            <option value="+47">+47 (Norway)</option>
-                            <option value="+48">+48 (Poland)</option>
-                            <option value="+49">+49 (Germany)</option>
-                            <option value="+353">+353 (Ireland)</option>
-                            <option value="+51">+51 (Peru)</option>
-                            <option value="+52">+52 (Mexico)</option>
-                        
-                            <!-- Asia -->
-                            <option value="+60">+60 (Malaysia)</option>
-                            <option value="+62">+62 (Indonesia)</option>
-                            <option value="+63">+63 (Philippines)</option>
-                            <option value="+64">+64 (New Zealand)</option>
-                            <option value="+65">+65 (Singapore)</option>
-                            <option value="+66">+66 (Thailand)</option>
-                            <option value="+81">+81 (Japan)</option>
-                            <option value="+82">+82 (South Korea)</option>
-                            <option value="+84">+84 (Vietnam)</option>
-                            <option value="+86">+86 (China)</option>
-                            <option value="+91">+91 (India)</option>
-                            <option value="+92">+92 (Pakistan)</option>
-                            <option value="+93">+93 (Afghanistan)</option>
-                            <option value="+94">+94 (Sri Lanka)</option>
-                            <option value="+95">+95 (Myanmar)</option>
-                            <option value="+98">+98 (Iran)</option>
-                            <option value="+880">+880 (Bangladesh)</option>
-                            <option value="+977">+977 (Nepal)</option>
-                            <!-- Former USSR countries -->
-                            <option value="+7">+7 (Russia)</option>
-                            <option value="+375">+375 (Belarus)</option>
-                            <option value="+380">+380 (Ukraine)</option>
-                            <option value="+381">+381 (Serbia)</option>
-                            <option value="+382">+382 (Montenegro)</option>
-                            <option value="+383">+383 (Kosovo)</option>
-                            <option value="+387">+387 (Bosnia and Herzegovina)</option>
-                            <option value="+389">+389 (North Macedonia)</option>
-                            <option value="+995">+995 (Georgia)</option>
-                            <option value="+996">+996 (Kyrgyzstan)</option>
-                            <option value="+998">+998 (Uzbekistan)</option>
-                            <option value="+997">+997 (Kazakhstan)</option>
-                            <option value="+993">+993 (Turkmenistan)</option>
-                            <option value="+994">+994 (Azerbaijan)</option>
-                        
-                            <!-- Americas -->
-                            <option value="+1">+1 (United States / Canada)</option>
-                            <option value="+54">+54 (Argentina)</option>
-                            <option value="+55">+55 (Brazil)</option>
-                            <option value="+56">+56 (Chile)</option>
-                            <option value="+57">+57 (Colombia)</option>
-                            <option value="+58">+58 (Venezuela)</option>
-                        </select>
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Phone Number">
+    <!-- Contact Section -->
+    <div class="contact-container">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>Feel free to reach out to me through the following:</p>
+                <p>Email: <a href="mailto:weltekji@gmail.com" class="footer__contact-link">weltekji@gmail.com</a></p>
+                <p>Phone: <a href="tel:+393509051999" class="footer__contact-link">+393509051999</a></p>
+            </div>
+            <div class="contact-form-container">
+                <h2>Contact Form</h2>
+                <form action="https://formspree.io/f/mnnavgpl" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" aria-label="Name" required>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" aria-label="Email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" aria-label="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <div class="input-group">
+                            <select class="form-control" id="phone-code" name="phone_code" aria-label="Phone code">
+                                <!-- Africa -->
+                                <option value="+213">+213 (Algeria)</option>
+                                <option value="+225">+225 (Ivory Coast)</option>
+                                <option value="+226">+226 (Burkina Faso)</option>
+                                <option value="+227">+227 (Niger)</option>
+                                <option value="+228">+228 (Togo)</option>
+                                <option value="+229">+229 (Benin)</option>
+                                <option value="+230">+230 (Mauritius)</option>
+                                <option value="+231">+231 (Liberia)</option>
+                                <option value="+232">+232 (Sierra Leone)</option>
+                                <option value="+233">+233 (Ghana)</option>
+                                <option value="+234">+234 (Nigeria)</option>
+                                <option value="+235">+235 (Chad)</option>
+                                <option value="+236">+236 (Central African Republic)</option>
+                                <option value="+237">+237 (Cameroon)</option>
+                                <option value="+251">+251 (Ethiopia)</option>
+                                <option value="+256">+256 (Uganda)</option>
+                                <option value="+27">+27 (South Africa)</option>
+                                <option value="+261">+261 (Madagascar)</option>
+                                <option value="+220">+220 (The Gambia)</option>
+                            
+                                <!-- Europe -->
+                                <option value="+32">+32 (Belgium)</option>
+                                <option value="+33">+33 (France)</option>
+                                <option value="+34">+34 (Spain)</option>
+                                <option value="+36">+36 (Hungary)</option>
+                                <option value="+39">+39 (Italy)</option>
+                                <option value="+40">+40 (Romania)</option>
+                                <option value="+41">+41 (Switzerland)</option>
+                                <option value="+44">+44 (United Kingdom)</option>
+                                <option value="+45">+45 (Denmark)</option>
+                                <option value="+46">+46 (Sweden)</option>
+                                <option value="+47">+47 (Norway)</option>
+                                <option value="+48">+48 (Poland)</option>
+                                <option value="+49">+49 (Germany)</option>
+                                <option value="+353">+353 (Ireland)</option>
+                                <option value="+51">+51 (Peru)</option>
+                                <option value="+52">+52 (Mexico)</option>
+                            
+                                <!-- Asia -->
+                                <option value="+60">+60 (Malaysia)</option>
+                                <option value="+62">+62 (Indonesia)</option>
+                                <option value="+63">+63 (Philippines)</option>
+                                <option value="+64">+64 (New Zealand)</option>
+                                <option value="+65">+65 (Singapore)</option>
+                                <option value="+66">+66 (Thailand)</option>
+                                <option value="+81">+81 (Japan)</option>
+                                <option value="+82">+82 (South Korea)</option>
+                                <option value="+84">+84 (Vietnam)</option>
+                                <option value="+86">+86 (China)</option>
+                                <option value="+91">+91 (India)</option>
+                                <option value="+92">+92 (Pakistan)</option>
+                                <option value="+93">+93 (Afghanistan)</option>
+                                <option value="+94">+94 (Sri Lanka)</option>
+                                <option value="+95">+95 (Myanmar)</option>
+                                <option value="+98">+98 (Iran)</option>
+                                <option value="+880">+880 (Bangladesh)</option>
+                                <option value="+977">+977 (Nepal)</option>
+                                <!-- Former USSR countries -->
+                                <option value="+7">+7 (Russia)</option>
+                                <option value="+375">+375 (Belarus)</option>
+                                <option value="+380">+380 (Ukraine)</option>
+                                <option value="+381">+381 (Serbia)</option>
+                                <option value="+382">+382 (Montenegro)</option>
+                                <option value="+383">+383 (Kosovo)</option>
+                                <option value="+387">+387 (Bosnia and Herzegovina)</option>
+                                <option value="+389">+389 (North Macedonia)</option>
+                                <option value="+995">+995 (Georgia)</option>
+                                <option value="+996">+996 (Kyrgyzstan)</option>
+                                <option value="+998">+998 (Uzbekistan)</option>
+                                <option value="+997">+997 (Kazakhstan)</option>
+                                <option value="+993">+993 (Turkmenistan)</option>
+                                <option value="+994">+994 (Azerbaijan)</option>
+                            
+                                <!-- Americas -->
+                                <option value="+1">+1 (United States / Canada)</option>
+                                <option value="+54">+54 (Argentina)</option>
+                                <option value="+55">+55 (Brazil)</option>
+                                <option value="+56">+56 (Chile)</option>
+                                <option value="+57">+57 (Colombia)</option>
+                                <option value="+58">+58 (Venezuela)</option>
+                            </select>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Phone Number" aria-label="Phone number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" aria-label="Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-
-
-
-
-
-
-
-
 
     <footer class="footer">
         <div class="footer__container">
@@ -631,8 +346,8 @@ body {
             <div class="footer__contact">
                 <p class="footer__contact-title">Contact Information</p>
                 <p class="footer__contact-info">
-                    Email: <a href="mailto:info@weltekji.com" class="footer__contact-link">weltekji@gmail.com</a><br>
-                    Phone: <a href="tel:+1234567890" class="footer__contact-link">+393509051999</a>
+                    Email: <a href="mailto:weltekji@gmail.com" class="footer__contact-link">weltekji@gmail.com</a><br>
+                    Phone: <a href="tel:+393509051999" class="footer__contact-link">+393509051999</a>
                 </p>
             </div>
             <div class="footer__socials">
@@ -652,46 +367,7 @@ body {
             <a href="qr.html" class="qr-button">View QR Code</a>
         </div>
     </footer>
-    
-
 
     <script src="app.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
