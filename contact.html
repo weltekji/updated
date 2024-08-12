@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+ 
+     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Weltekji - Digital Solutions">
     <meta property="og:description" content="Weltekji offers a wide range of digital solutions including website development, software development, and logo design. Contact us to elevate your digital presence.">
-    <meta property="og:image" content="https://weltekji.com/Qeb Development.png">
+    <meta property="og:image" content="https://weltekji.com/Profile picture.png">
     <meta property="og:url" content="https://weltekji.com">
     <meta property="og:type" content="website">
 
@@ -16,7 +22,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Weltekji - Digital Solutions">
     <meta name="twitter:description" content="Weltekji offers a wide range of digital solutions including website development, software development, and logo design. Contact us to elevate your digital presence.">
-    <meta name="twitter:image" content="https://weltekji.com/Qeb Development.png">
+    <meta name="twitter:image" content="https://weltekji.com/Profile picture.png">
     <meta name="twitter:url" content="https://weltekji.com">
 
 
@@ -56,7 +62,7 @@
 
          
 
-        .navbar {
+.navbar {
             background: #131313;
             height: 80px;
             display: flex;
@@ -70,7 +76,7 @@
         .navbar__container {
             display: flex;
             justify-content: space-between;
-            height: 80px;
+            height: 70px;
             z-index: 1;
             width: 100%; /* Spacing between logo and navbar links */
             max-width: 1300px;
@@ -340,102 +346,7 @@
 
 
        
-        /* Footer Styles */
-.footer {
-    background-color: #131313; /* Dark background to match the theme */
-    color: #ffffff; /* White text */
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.footer__container {
-    max-width: 1700px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer__logo img {
-    width: 120px; /* Adjust as needed */
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.footer__links {
-    margin-bottom: 20px;
-}
-
-.footer__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-.footer__link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-.footer__link:hover {
-    color: #0c6cea; /* Change to a theme color on hover */
-}
-
-.footer__contact {
-    margin-bottom: 20px;
-}
-
-.footer__contact-title {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-.footer__contact-info {
-    font-size: 1rem;
-}
-
-.footer__contact-link {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.footer__contact-link:hover {
-    color: #0c6cea; /* Change to a theme color on hover */
-}
-
-.footer__socials {
-    margin-bottom: 20px;
-}
-
-.footer__social-link {
-    color: #ffffff;
-    font-size: 1.5rem;
-    margin: 0 10px;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.footer__social-link:hover {
-    color: #ff5722; /* Change to a theme color on hover */
-    transform: scale(1.2); /* Enlarge icons on hover */
-}
-
-.footer__bottom {
-    font-size: 0.9rem;
-    color: #d0d0d0;
-}
-
-@media (max-width: 768px) {
-    .footer__list {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
+        
     </style>
 </head>
 <body>
@@ -605,7 +516,7 @@
     </div>
 
     <!-- Footer -->
-           <footer class="footer">
+    <footer class="footer">
         <div class="footer__container">
             <!-- Existing Footer Content -->
             <div class="footer__logo">
@@ -646,15 +557,8 @@
             <a href="qr.html" class="qr-button">View QR Code</a>
         </div>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        document.getElementById('mobile-menu').addEventListener('click', function () {
-            document.querySelector('.navbar__menu').classList.toggle('active');
-            this.classList.toggle('is-active');
-        });
-    </script>
+    <script src="app.js"></script>
+     
+   
 </body>
 </html>
