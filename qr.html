@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code - Weltekji</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 0;
+            position: relative;
+        }
+
+        .navbar__container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar__logo img {
+            height: 50px;
+        }
+
+        .navbar__toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar__toggle .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        .navbar__menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar__item {
+            margin: 0 10px;
+        }
+
+        .navbar__links {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .navbar__links:hover {
+            text-decoration: underline;
+        }
+
+        /* QR Code Section Styles */
+        .qr-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .qr-container img {
+            max-width: 250px; /* Adjust as needed */
+            height: auto;
+            border: 2px solid #007BFF; /* Optional: border to make it stand out */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: pulse 1.5s infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .qr-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .qr-container p {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .footer {
+            margin-top: auto;
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer__logo img {
+            height: 40px;
+        }
+
+        .footer__links {
+            margin: 20px 0;
+        }
+
+        .footer__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer__link {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        .footer__link:hover {
+            text-decoration: underline;
+        }
+
+        .footer__contact {
+            margin: 20px 0;
+        }
+
+        .footer__contact-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .footer__contact-link {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer__contact-link:hover {
+            text-decoration: underline;
+        }
+
+        .footer__socials {
+            margin: 20px 0;
+        }
+
+        .footer__social-link {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .footer__social-link:hover {
+            color: #026a75;
+        }
+
+        @media (max-width: 768px) {
+            .navbar__toggle {
+                display: flex;
+            }
+
+            .navbar__menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar__menu.active {
+                display: flex;
+            }
+
+            .navbar__item {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">
+                <img src="Logo weltekji.png" alt="WEL Logo" id="navbar__logo-img">
+            </a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="navbar__menu">
+                <li class="navbar__item"><a href="index.html" class="navbar__links">Home</a></li>
+                <li class="navbar__item"><a href="/index.html#portfolio" class="navbar__links">Service</a></li>
+                <li class="navbar__item"><a href="blog.html" class="navbar__links">Blog</a></li>
+                <li class="navbar__item"><a href="about.html" class="navbar__links">About</a></li>
+                <li class="navbar__item"><a href="/contact.html#contact" class="navbar__links">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- QR Code Section -->
+    <div class="qr-container">
+        <img src="qr-code.png" alt="Weltekji QR Code">
+        <p>Scan the QR code to visit Weltekji.</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__logo">
+                <a href="/">
+                    <img src="Logo weltekji.png" alt="WEL Logo" id="footer__logo-img">
+                </a>
+            </div>
+            <div class="footer__links">
+                <ul class="footer__list">
+                    <li><a href="index.html" class="footer__link">Home</a></li>
+                    <li><a href="#portfolio" class="footer__link">Service</a></li>
+                    <li><a href="blog.html" class="footer__link">Blog</a></li>
+                    <li><a href="#contact" class="footer__link">Contact</a></li>
+                    <li><a href="about.html" class="footer__link">About Me</a></li>
+                </ul>
+            </div>
+            <div class="footer__contact">
+                <p class="footer__contact-title">Contact Information</p>
+                <p class="footer__contact-info">
+                    Email: <a href="mailto:info@weltekji.com" class="footer__contact-link">info@weltekji.com</a><br>
+                    Phone: <a href="tel:+1234567890" class="footer__contact-link">+123 456 7890</a>
+                </p>
+            </div>
+            <div class="footer__socials">
+                <a href="https://x.com/AbenezerRW" class="footer__social-link" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/abenezer-regasa-777522306/" class="footer__social-link" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.facebook.com/yourprofile" class="footer__social-link" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2024 Weltekji. All rights reserved.</p>
+            <a href="qr.html" class="qr-button">View QR Code</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Navbar Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu');
+            const navbarMenu = document.querySelector('.navbar__menu');
+
+            mobileMenuButton.addEventListener('click', function() {
+                navbarMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
